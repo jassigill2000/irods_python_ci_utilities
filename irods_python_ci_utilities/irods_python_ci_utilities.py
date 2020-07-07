@@ -72,6 +72,7 @@ def install_os_packages(packages):
         'Centos linux': install_os_packages_yum,
         'Opensuse ': install_os_packages_zypper,
         'Opensuse leap': install_os_packages_zypper,
+        'Sles': install_os_packages_zypper,
     }
     try:
         return dispatch_map[get_distribution()](packages)
@@ -100,6 +101,7 @@ def install_os_packages_from_files(files):
         'Centos linux': install_os_packages_from_files_yum,
         'Opensuse ': install_os_packages_from_files_zypper,
         'Opensuse leap': install_os_packages_from_files_zypper,
+        'Sles': install_os_packages_from_files_zypper,
     }
     try:
         dispatch_map[get_distribution()](files)
@@ -126,6 +128,7 @@ def install_irods_core_dev_repository():
         'Centos linux': install_irods_core_dev_repository_yum,
         'Opensuse ': install_irods_core_dev_repository_zypper,
         'Opensuse leap': install_irods_core_dev_repository_zypper,
+        'Sles': install_irods_core_dev_repository_zypper,
     }
     try:
         dispatch_map[get_distribution()]()
